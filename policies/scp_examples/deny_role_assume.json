@@ -1,0 +1,17 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "DenyRoleAssume",
+      "Effect": "Deny",
+      "Action": [
+            "iam:UpdateAssumeRolePolicy" 
+        ],
+      "Resource": [
+            "arn:aws:iam::*:role/[role_prefix]*", 
+            "arn:aws:iam::*:role/*[partial_role]*", 
+            "arn:aws:iam::*:role/[role]" 
+        ]
+    }
+  ]
+}

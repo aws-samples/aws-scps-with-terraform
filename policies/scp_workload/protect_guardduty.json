@@ -1,0 +1,17 @@
+{
+    "Version": "2012-10-17",
+    "Statement": {
+        "Sid" : "ProtectGuardDuty",
+        "Effect": "Deny",
+        "Action": [
+            "guardduty:DeleteDetector",
+            "guardduty:DisassociateFromMasterAccount",
+            "guardduty:UpdateDetector",
+            "guardduty:DeclineInvitations",
+            "guardduty:DeletePublishingDestination",
+            "guardduty:CreateFilter",
+            "guardduty:CreateIPSet"
+            ],
+        "Resource": "*"
+    }
+}

@@ -1,0 +1,16 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+      {
+        "Sid": "DenyKMSDelete",
+        "Effect": "Deny",
+        "Action": [
+              "kms:ScheduleKeyDeletion" 
+          ],
+        "Resource": [
+              "*" 
+          ]
+      }
+  ]
+}
+

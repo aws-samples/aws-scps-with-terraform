@@ -1,0 +1,17 @@
+{
+    "Version": "2012-10-17",
+    "Statement": [
+      {
+        "Sid": "ProtectBilling",
+        "Effect": "Deny",
+        "Action": [
+              "aws-portal:ModifyAccount", 
+              "aws-portal:ModifyBilling", 
+              "aws-portal:ModifyPaymentMethods" 
+          ],
+        "Resource": [
+              "*" 
+          ]
+      }
+    ]
+}

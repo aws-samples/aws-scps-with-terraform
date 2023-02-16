@@ -1,0 +1,32 @@
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        
+        {
+            "Sid": "ProtectRole",
+            "Effect": "Deny",
+            "Action": [
+                    "iam:AttachRolePolicy", 
+                    "iam:CreateRole", 
+                    "iam:DeleteRole", 
+                    "iam:DeleteRolePermissionsBoundary", 
+                    "iam:DeleteRolePolicy", 
+                    "iam:DetachRolePolicy", 
+                    "iam:PutRolePermissionsBoundary", 
+                    "iam:PutRolePolicy", 
+                    "iam:UpdateRole", 
+                    "iam:UpdateRoleDescription" 
+                ],
+            "Resource": [
+                    "arn:aws:iam::*:role/[role_prefix]*", 
+                    "arn:aws:iam::*:role/*[partial_role]*", 
+                    "arn:aws:iam::*:role/[role]" 
+                ],
+            "Condition": {
+                    "ArnNotLike": {
+                        "aws:PrincipalARN": "arn:aws:iam::*:role/[exception_role]"
+                    }
+                }
+        }
+    ]
+}

@@ -1,0 +1,25 @@
+{
+    "Version": "2012-10-17",
+    "Statement": [
+      {
+        "Sid": "ForceS3EncryptedUpload",
+        "Effect": "Deny",
+        "Action": [
+              "s3:PutObject" 
+          ],
+        "Resource": [
+              "arn:aws:s3:::*/*" 
+          ],
+        "Condition": {
+              "Null": {
+                  "s3:x-amz-server-side-encryption": "true"
+              },
+              "StringNotEquals": {
+                  "s3:x-amz-server-side-encryption": [
+                      "aws:kms"
+                  ]
+              }
+          }
+      }
+    ]
+}

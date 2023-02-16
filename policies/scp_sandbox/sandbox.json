@@ -1,0 +1,72 @@
+{
+    "Version": "2012-10-17",
+    "Statement": [
+      {
+        "Sid" : "ProtectSandbox",
+        "Effect": "Deny",
+        "Action": [
+            "guardduty:DeleteDetector",
+            "guardduty:DisassociateFromMasterAccount",
+            "guardduty:UpdateDetector",
+            "guardduty:CreateFilter",
+            "guardduty:CreateIPSet",
+            "access-analyzer:DeleteAnalyzer",
+            "ec2:CreateClientVpnRoute",
+            "ec2:AttachVpnGateway",
+            "ec2:DisassociateClientVpnTargetNetwork",
+            "ec2:DeleteClientVpnEndpoint",
+            "ec2:DeleteVpcPeeringConnection",
+            "ec2:AcceptVpcPeeringConnection",
+            "ec2:ModifyClientVpnEndpoint",
+            "ec2:CreateVpnConnectionRoute",
+            "ec2:RevokeClientVpnIngress",
+            "ec2:RejectVpcPeeringConnection",
+            "ec2:DetachVpnGateway",
+            "ec2:DeleteVpnConnectionRoute",
+            "ec2:CreateClientVpnEndpoint",
+            "ec2:AuthorizeClientVpnIngress",
+            "ec2:DeleteVpnGateway",
+            "ec2:TerminateClientVpnConnections",
+            "ec2:DeleteClientVpnRoute",
+            "ec2:ModifyVpcPeeringConnectionOptions",
+            "ec2:CreateVpnGateway",
+            "ec2:DeleteVpnConnection",
+            "ec2:CreateVpcPeeringConnection",
+            "ec2:CreateVpnConnection",
+            "ec2:AllocateIpamPoolCidr",
+            "ec2:AssociateTransitGateway*",
+            "globalaccelerator:*",
+            "directconnect:*",
+            "route53domains:RegisterDomain",
+            "route53domains:TransferDomain",
+            "route53resolver:*",
+            "ram:CreateResourceShare",
+            "transfer:*",
+            "workmail:*",
+            "shield:*",
+            "cloudfront:*",
+            "codestar:*"
+            ],
+        "Resource": "*"
+      },
+      {
+        "Effect": "Deny",
+        "Action": [
+          "ec2:RunInstances"
+        ],
+        "Condition": {
+          "BoolIfExists": {
+            "ec2:AssociatePublicIpAddress": "true"
+          }
+        },
+        "Resource": "arn:aws:ec2:*:*:network-interface/*"
+      },
+      {
+        "Action": [
+          "ec2:AssociateAddress"
+        ],
+        "Resource": "*",
+        "Effect": "Deny"
+      }
+    ]
+  }

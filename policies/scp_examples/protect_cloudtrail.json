@@ -1,0 +1,18 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+        "Sid": "ProtectTrail",
+        "Effect": "Deny",
+        "Action": [
+              "cloudtrail:DeleteTrail", 
+              "cloudtrail:PutEventSelectors", 
+              "cloudtrail:StopLogging", 
+              "cloudtrail:UpdateTrail" 
+          ],
+        "Resource": [
+              "arn:aws:cloudtrail:${Region}:${Account}:trail/[CLOUDTRAIL_NAME]" 
+          ]
+      }
+  ]
+}

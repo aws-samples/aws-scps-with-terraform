@@ -1,0 +1,45 @@
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Effect": "Deny",
+            "Action": ["organizations:LeaveOrganization","iam:CreateAccessKey", "iam:CreateUser"],
+            "Resource": "*"
+        },
+        {
+            "Action": "*",
+            "Resource": "*",
+            "Effect": "Deny",
+            "Condition": {
+                "StringLike": {
+                    "aws:PrincipalArn": [
+                        "arn:aws:iam::*:root"
+                    ]
+                }
+            }
+        },
+        {
+            "Action": [
+              "aws-portal:ModifyAccount",
+              "aws-portal:ModifyBilling",
+              "aws-portal:ModifyPaymentMethods"
+            ],
+            "Resource": "*",
+            "Effect": "Deny"
+        },
+        {
+            "Effect": "Deny",
+            "Action": [
+                  "*" 
+              ],
+            "Resource": [
+                  "*" 
+              ],
+            "Condition": {
+                  "Bool": {
+                      "ram:AllowsExternalPrincipals": "true"
+                  }
+            }
+        }
+    ]
+}
