@@ -27,8 +27,6 @@ The pattern will be deployed from a local Repository, using Terraform.
 
 This pattern defaults to SCPs for Root, Sandbox, and Workload. But this can be fully customized.
 
-### Example SCPs
-
 These SCPs will be deployed if the pattern is not edited. 
 
 | SCP | OU | description | 
