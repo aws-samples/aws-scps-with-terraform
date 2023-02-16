@@ -52,8 +52,8 @@ Add, edit or remove the OUs.
 Add, edit or remove the SCP used. These are stored as `json` files in the directories within `policies`. 
 | Story | Description |
 |---|---|
-| Add SCP | Create a new `json` file in the correct directory within `policies`. The location depends on the `for_each` file location in `main.tf`. Multiple SCPs can be added per directory. | 
-| Edit SCP | Edit the relevant `json` file in the `policies` directories. | 
+| Add a SCP | Create a new `json` file in the correct directory within `policies`. The location depends on the `for_each` file location in `main.tf`. Multiple SCPs can be added per directory. | 
+| Edit a SCP | Edit the relevant `json` file in the `policies` directories. | 
 
 ### Deploy
 Define the mandatory variables and deploy the pattern. 

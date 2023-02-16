@@ -1,3 +1,6 @@
+// Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+// SPDX-License-Identifier: MIT-0
+
 module "scp_root" {
   source    = "./modules/scp"
   for_each  = fileset(path.root, "policies/scp_root/*.json")

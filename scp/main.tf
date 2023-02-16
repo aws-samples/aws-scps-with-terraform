@@ -1,3 +1,6 @@
+// Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+// SPDX-License-Identifier: MIT-0
+
 resource "aws_organizations_policy" "this" {
   name    = local.scp_name
   content = file(var.json_file)
