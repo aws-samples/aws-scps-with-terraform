@@ -12,11 +12,9 @@ This pattern will use Terraform to:
 | sandbox | sandbox | protect sandbox accounts from using services that could be a security risk or incur significant cost | 
 | protect_guardduty | workload | deny the deletion of GuardDuty resources. | 
 
-**These policies are example policies to demonstrate the code works. Before deploying to your own accounts you should carefully consider which preventative controls are appropriate for you.** 
+>**These policies are example policies to demonstrate the code works. Before deploying to your own accounts you should carefully consider which preventative controls are appropriate for you.** 
 
-There are also a number of example policies in a separate folder that could be incorporated. These include forcing EC2 encryption, protecting CloudWatch logs, denying creation of default VPCs, and protecting Config resources.
-
-The code provided can be used standalone or could be integrated into an existing project. 
+Example policies are inlcuded in the `policies/scp_examples` directory. These include forcing EC2 encryption, protecting CloudWatch logs, denying creation of default VPCs, and protecting Config resources.
 
 ## Prerequisites
 
@@ -27,7 +25,6 @@ The code provided can be used standalone or could be integrated into an existing
 ## Limitations
 
 - [SCP Service Limits](https://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_limits.html) for SCPs. 
-- The default policies (listed above) are examples to demonstrate how the code works. Before deploying to your own accounts you should carefully consider which preventative controls are appropriate for you.
 - SCPs are a preventative control and can have unintended consequences. Ensure you have a good knowledge of AWS Organizations and Terraform before you deploy this pattern, especially to production environments. 
 
 ## Architecture
