@@ -44,8 +44,8 @@ Add, edit or remove the OUs.
 | Story | Description |
 |---|---|
 | Update modules | Add a new module block or edit an existing module in `main.tf`. Rename the module and change the values for `for_each` file location and `ou_list` variable. 
-| Update directories | In the `policies` folder, create or edit an existing folder with the same name used in the module block. This folder will be used for the SCP `json` files. 
-| Edit variables | Add a new variable or edit an existing variable in `variables.tf` to the same name used in the module block. 
+| Update directories | In the `policies` folder, create a new folder or edit an existing folder with the same name used in the module block. This folder will be used for the SCP `json` files. 
+| Edit variables | Create a new variable or edit an existing variable in `variables.tf` to the same name used in the module block. 
 | Define variables | Add or edit the OU IDs in `config.auto.tfvars`. Multiple IDs can be included as a list of strings. 
 
 ### (Optional) Add or Edit the SCPs
