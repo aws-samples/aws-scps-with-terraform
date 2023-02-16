@@ -55,12 +55,12 @@ Add, edit or remove the SCP used. These are stored as `json` files in the direct
 | Add a SCP | Create a new `json` file in the correct directory within `policies`. The location depends on the `for_each` file location in `main.tf`. Multiple SCPs can be added per directory. | 
 | Edit a SCP | Edit the relevant `json` file in the `policies` directories. | 
 
-### Deploy
+### Deploy the pattern
 Define the mandatory variables and deploy the pattern. 
 | Story | Description |
 |---|---|
 | Define deployment region | Set region `config.auto.tfvars` |
-| Define OU IDs | Add or edit the OU IDs in `config.auto.tfvars`. Multiple IDs can be included as a list of strings.  |
+| Define OUs | Add or edit the OU IDs in `config.auto.tfvars`. Multiple IDs can be included as a list of strings.  |
 | Deploy SCPs | Initialize the directory and apply |
 
 ## Related Resources
