@@ -2,8 +2,8 @@
 
 This pattern will use Terraform to: 
 
-- Setup a template to easily create and apply [Service Control Policies (SCPs)](https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_scps.html) programmatically
-- Deploy the following SCPs:
+1. Setup a template to easily create and apply [Service Control Policies (SCPs)](https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_scps.html) programmatically
+2.  Deploy the following SCPs:
 
 | SCP | OU | description | 
 | --- | --- | --- | 
@@ -12,7 +12,7 @@ This pattern will use Terraform to:
 | sandbox | sandbox | protect sandbox accounts from using services that could be a security risk or incur significant cost | 
 | protect_guardduty | workload | deny the deletion of GuardDuty resources. | 
 
->**These policies are example policies to demonstrate the code works. Before deploying to your own accounts you should carefully consider which preventative controls are appropriate for you.** 
+>**These policies are to demonstrate how SCPs can be deployed to different OUs using Terraform. Before deploying to your own accounts you should carefully consider which preventative controls are appropriate for you.** 
 
 Example policies are inlcuded in the `policies/scp_examples` directory. These include forcing EC2 encryption, protecting CloudWatch logs, denying creation of default VPCs, and protecting Config resources.
 
@@ -38,19 +38,13 @@ The pattern will be deployed from a local Repository, using Terraform.
 This pattern defaults to SCPs for Root, Sandbox, and Workload. But this can be fully customized. 
 
 ## Epics
-### Define variables
-Define the mandatory variables in `config.auto.tfvars`. 
-| Story | Description |
-|---|---|
-| Define deployment region | Set region `config.auto.tfvars` |
-| Define OU IDs | Add or edit the OU IDs in `config.auto.tfvars`. Multiple IDs can be included as a list of strings.  |
 
 ### (Optional) Add or Edit the OUs 
 Add, edit or remove the OUs.
 | Story | Description |
 |---|---|
-| `main.tf` | Add a new module block or edit an existing module in `main.tf`. Rename the module and change the values for `for_each` file location and `ou_list` variable. 
-| Create a folder for the SCPs | In the `policies` folder, create or edit an existing folder with the same name used in the module block. This folder will be used for the SCP `json` files. 
+| Update modules | Add a new module block or edit an existing module in `main.tf`. Rename the module and change the values for `for_each` file location and `ou_list` variable. 
+| Update directories | In the `policies` folder, create or edit an existing folder with the same name used in the module block. This folder will be used for the SCP `json` files. 
 | Edit variables | Add a new variable or edit an existing variable in `variables.tf` to the same name used in the module block. 
 | Define variables | Add or edit the OU IDs in `config.auto.tfvars`. Multiple IDs can be included as a list of strings. 
 
@@ -62,9 +56,11 @@ Add, edit or remove the SCP used. These are stored as `json` files in the direct
 | Edit SCP | Edit the relevant `json` file in the `policies` directories. | 
 
 ### Deploy
-Deploy the code. 
+Define the mandatory variables and deploy the pattern. 
 | Story | Description |
 |---|---|
+| Define deployment region | Set region `config.auto.tfvars` |
+| Define OU IDs | Add or edit the OU IDs in `config.auto.tfvars`. Multiple IDs can be included as a list of strings.  |
 | Deploy SCPs | Initialize the directory and apply |
 
 ## Related Resources
