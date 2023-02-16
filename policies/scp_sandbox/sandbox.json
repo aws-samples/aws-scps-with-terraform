@@ -40,33 +40,9 @@
             "route53domains:RegisterDomain",
             "route53domains:TransferDomain",
             "route53resolver:*",
-            "ram:CreateResourceShare",
-            "transfer:*",
-            "workmail:*",
-            "shield:*",
-            "cloudfront:*",
-            "codestar:*"
+            "ram:CreateResourceShare"
             ],
         "Resource": "*"
-      },
-      {
-        "Effect": "Deny",
-        "Action": [
-          "ec2:RunInstances"
-        ],
-        "Condition": {
-          "BoolIfExists": {
-            "ec2:AssociatePublicIpAddress": "true"
-          }
-        },
-        "Resource": "arn:aws:ec2:*:*:network-interface/*"
-      },
-      {
-        "Action": [
-          "ec2:AssociateAddress"
-        ],
-        "Resource": "*",
-        "Effect": "Deny"
       }
     ]
   }

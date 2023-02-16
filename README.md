@@ -1,20 +1,10 @@
 ## aws-scps-with-terraform
 
-This pattern will use Terraform to: 
+This pattern:
+- uses Terraform to setup a mechanism to easily create and apply [Service Control Policies (SCPs)](https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_scps.html) programmatically
+- provides example SCPs that can be used or customized
 
-1. Setup a template to easily create and apply [Service Control Policies (SCPs)](https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_scps.html) programmatically
-2.  Deploy the following SCPs:
-
-| SCP | OU | description | 
-| --- | --- | --- | 
-| allow_services | root | an allow list of specific AWS services | 
-| root_policy | root | prohibit accounts from leaving the organization, creating new IAM users, creating new IAM access keys, and changes to billing details. Deny root user actions and deny external principals.  | 
-| sandbox | sandbox | protect sandbox accounts from using services that could be a security risk or incur significant cost | 
-| protect_guardduty | workload | deny the deletion of GuardDuty resources. | 
-
->**These policies are to demonstrate how SCPs can be deployed to different OUs using Terraform. Before deploying to your own accounts you should carefully consider which preventative controls are appropriate for you.** 
-
-Example policies are inlcuded in the `policies/scp_examples` directory. These include forcing EC2 encryption, protecting CloudWatch logs, denying creation of default VPCs, and protecting Config resources.
+Users can drag + drop `json` templates in the correct directory. The code will then do the heavy lifting and apply it to the specified OUs. 
 
 ## Prerequisites
 
@@ -35,7 +25,19 @@ The pattern will be deployed from a local Repository, using Terraform.
 1. SCPs are created in AWS Organizations
 2. These SCPs are then applied to Organizational Units (OUs). 
 
-This pattern defaults to SCPs for Root, Sandbox, and Workload. But this can be fully customized. 
+This pattern defaults to SCPs for Root, Sandbox, and Workload. But this can be fully customized.
+
+### Example SCPs
+
+These SCPs will be deployed if the pattern is not edited. 
+
+| SCP | OU | description | 
+| --- | --- | --- | 
+| root_policy | root | prohibit accounts from leaving the organization, creating new IAM users, creating new IAM access keys, and changes to billing details. Deny root user actions and deny external principals.  | 
+| sandbox | sandbox | protect sandbox accounts from using services that could be a security risk or incur significant cost | 
+| protect_guardduty | workload | deny the deletion of GuardDuty resources. | 
+
+>**These policies are to demonstrate how SCPs can be deployed to different OUs using Terraform. Before deploying to your own accounts you should carefully consider which preventative controls are appropriate for you.** 
 
 ## Epics
 
@@ -52,8 +54,9 @@ Add, edit or remove the OUs.
 Add, edit or remove the SCP used. These are stored as `json` files in the directories within `policies`. 
 | Story | Description |
 |---|---|
-| Add a SCP | Create a new `json` file in the correct directory within `policies`. The location depends on the `for_each` file location in `main.tf`. Multiple SCPs can be added per directory. | 
-| Edit a SCP | Edit the relevant `json` file in the `policies` directories. | 
+| Create a new SCP | Create a new `json` file in the correct directory within `policies`. The location depends on the `for_each` file location in `main.tf`. Multiple SCPs can be added per directory. | 
+| Edit an existing SCP | Edit the relevant `json` file in the `policies` directories. | 
+| Move an existing SCP | Drag and drop the relevant `json` file in correct directory. Eg move it from `scp_examples` to `scp_workload`. | 
 
 ### Deploy the pattern
 Define the mandatory variables and deploy the pattern. 
@@ -61,6 +64,7 @@ Define the mandatory variables and deploy the pattern.
 |---|---|
 | Define deployment region | Set region `config.auto.tfvars` |
 | Define OUs | Add or edit the OU IDs in `config.auto.tfvars`. Multiple IDs can be included as a list of strings.  |
+| Authenticate | Use the AWS CLI and credentials to access the Organization Management account  |
 | Deploy SCPs | Initialize the directory and apply |
 
 ## Related Resources
