@@ -44,7 +44,7 @@
                     "aws:PrincipalArn": [
                         "arn:aws:iam::*:role/[security_role]",
                         "arn:aws:iam::*:role/[config_recorder_role]",
-                        "arn:aws:config:::*",
+                        "arn:aws:config:*::*",
                         "arn:aws:iam::*:role/service-role/s3crr_role_for_*"
                     ]
                 }
