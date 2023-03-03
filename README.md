@@ -37,32 +37,13 @@ These SCPs will be deployed if the pattern is not edited.
 
 >**These policies are to demonstrate how SCPs can be deployed to different OUs using Terraform. Before deploying to your own accounts you should carefully consider which preventative controls are appropriate for you.** 
 
-## Epics
+## Deploy Pattern
 
-### (Optional) Add or Edit the OUs 
-Add, edit or remove the OUs.
 | Story | Description |
 |---|---|
-| Update modules | Add a new module block or edit an existing module in `main.tf`. Rename the module and change the values for `for_each` file location and `ou_list` variable. 
-| Update directories | In the `policies` folder, create a new folder or edit an existing folder with the same name used in the module block. This folder will be used for the SCP `json` files. 
-| Edit variables | Create a new variable or edit an existing variable in `variables.tf` to the same name used in the module block. 
-| Define variables | Add or edit the OU IDs in `config.auto.tfvars`. Multiple IDs can be included as a list of strings. 
-
-### (Optional) Add or Edit the SCPs
-Add, edit or remove the SCP used. These are stored as `json` files in the directories within `policies`. 
-| Story | Description |
-|---|---|
-| Create a new SCP | Create a new `json` file in the correct directory within `policies`. The location depends on the `for_each` file location in `main.tf`. Multiple SCPs can be added per directory. | 
-| Edit an existing SCP | Edit the relevant `json` file in the `policies` directories. | 
-| Move an existing SCP | Drag and drop the relevant `json` file in correct directory. Eg move it from `scp_examples` to `scp_workload`. | 
-
-### Deploy the pattern
-Define the mandatory variables and deploy the pattern. 
-| Story | Description |
-|---|---|
-| Define deployment region | Set region `config.auto.tfvars` |
-| Define OUs | Add or edit the OU IDs in `config.auto.tfvars`. Multiple IDs can be included as a list of strings.  |
-| Authenticate | Use the AWS CLI and credentials to access the Organization Management account  |
+| (Optional) Add or edit OUs | Add and/or edit variables in `config.auto.tfvars` and `variables.tf`, then add and/or edit a module block in `main.tf` and a scp directory in the `policies` folder. Follow the existing examples for the correct syntax. |
+| (Optional) Edit SCPs | Edit or add files in the `policies` directory. Any files in a directory linked to an OU will be applied to that OU. |
+| (Optional) Move SCPs | Drag and drop the relevant `json` file in correct directory. Eg move it from `scp_examples` to `scp_workload`. |
 | Deploy SCPs | Initialize the directory and apply |
 
 ## Related Resources
