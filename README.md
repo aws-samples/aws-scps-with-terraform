@@ -35,7 +35,7 @@ These SCPs will be deployed if the pattern is not edited.
 | sandbox | sandbox | protect sandbox accounts from using services that could be a security risk or incur significant cost | 
 | protect_guardduty | workload | deny the deletion of GuardDuty resources. | 
 
->**These policies are to demonstrate how SCPs can be deployed to different OUs using Terraform. Before deploying to your own accounts you should carefully consider which preventative controls are appropriate for you.** 
+These policies are to demonstrate how SCPs can be deployed to different OUs using Terraform. Before deploying to your own accounts you should carefully consider which preventative controls are appropriate for you.
 
 ## Deploy Pattern
 
