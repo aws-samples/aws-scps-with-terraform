@@ -1,7 +1,6 @@
 ## aws-scps-with-terraform
 
 This pattern deploys a mechanism to create and apply [Service Control Policies (SCPs)](https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_scps.html) with Terraform.
-- provides example SCPs that can be used or customized
 
 Users can drag + drop `json` templates in the correct directory in `policies`. The module will then do the undifferentiated heavy lifting and apply it to the specified OUs. The pattern also provides example SCPs that can be used or customized.
 
