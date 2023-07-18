@@ -12,36 +12,23 @@ A super-easy way to deploy [Service Control Policies (SCPs)](https://docs.aws.am
 
 - [SCP Service Limits](https://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_limits.html) 
 
-## Architecture
-![image info](./img/architecture.png)
-
-1. SCPs are created in AWS Organizations
-2. These SCPs are then applied to Organizational Units (OUs). 
-
-This pattern defaults to SCPs for Root, Sandbox, and Workload. But this can be fully customized.
-
-These SCPs will be deployed if the pattern is not edited. 
-
-| SCP | OU | description | 
-| --- | --- | --- | 
-| root_policy | root | prohibit accounts from leaving the organization, creating new IAM users, creating new IAM access keys, and changes to billing details. Deny root user actions and deny external principals.  | 
-| sandbox | sandbox | protect sandbox accounts from using services that could be a security risk or incur significant cost | 
-| protect_guardduty | workload | deny the deletion of GuardDuty resources. | 
-
-These policies are to demonstrate how SCPs can be deployed to different OUs using Terraform. Before deploying to your own accounts you should carefully consider which preventative controls are appropriate for you.
-
 ## Deployment
+This pattern defaults to SCPs for Root, Sandbox, and Workload OUs. If the pattern is not edited, it will deploy example SCPs to these OUs. This is obviously not recommended. These policies are intended to demonstrate how the pattern works and provide a guide rail for the next steps. 
 
 ### Customize to your OU structure
 1. Add or edit the variables in `config.auto.tfvars` and `variables.tf`.
 2. Add or edit the module blocks in `main.tf`.
-3. Add or edit the directories in the `policies` folder to align with your OUs.
+3. Add or edit the directories in the `policies` directory to align with your OUs.
 
 ### Deploy SCPs
 1. Drag + drop your SCP `json` templates in the correct directory in `policies`. 
 2. Initialize the directory and apply. 
 
 ... thats it. The module does the undifferentiated heavy lifting and applies it to the specified OUs. 
+
+## Example SCPs
+
+There are a series of example SCPs available in the `policies` directory. Before you edit and deploy them, ensure that you carefully consider the requirements of your organization and the impact that these controls may have. 
 
 ## Related Resources
 
