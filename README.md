@@ -1,8 +1,6 @@
-## aws-scps-with-terraform
+## AWS Service Control Policies (SCPs) with Terraform
 
-This pattern deploys a mechanism to create and apply [Service Control Policies (SCPs)](https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_scps.html) with Terraform.
-
-Users can drag + drop `json` templates in the correct directory in `policies`. The module will then do the undifferentiated heavy lifting and apply it to the specified OUs. The pattern also provides example SCPs that can be used or customized.
+A super-easy way to deploy [Service Control Policies (SCPs)](https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_scps.html) with Terraform.
 
 ## Prerequisites
 
@@ -12,12 +10,9 @@ Users can drag + drop `json` templates in the correct directory in `policies`. T
 
 ## Limitations
 
-- [SCP Service Limits](https://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_limits.html) for SCPs. 
-- SCPs are a preventative control and can have unintended consequences. Ensure you have a good knowledge of AWS Organizations and Terraform before you deploy this pattern, especially to production environments. 
+- [SCP Service Limits](https://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_limits.html) 
 
 ## Architecture
-The pattern will be deployed from a local Repository, using Terraform. 
-
 ![image info](./img/architecture.png)
 
 1. SCPs are created in AWS Organizations
@@ -35,14 +30,18 @@ These SCPs will be deployed if the pattern is not edited.
 
 These policies are to demonstrate how SCPs can be deployed to different OUs using Terraform. Before deploying to your own accounts you should carefully consider which preventative controls are appropriate for you.
 
-## Deploy Pattern
+## Deployment
 
-| Story | Description |
-|---|---|
-| (Optional) Add or edit OUs | Add and/or edit variables in `config.auto.tfvars` and `variables.tf`, then add and/or edit a module block in `main.tf` and a scp directory in the `policies` folder. Follow the existing examples for the correct syntax. |
-| (Optional) Edit SCPs | Edit or add files in the `policies` directory. Any files in a directory linked to an OU will be applied to that OU. |
-| (Optional) Move SCPs | Drag and drop the relevant `json` file in correct directory. Eg move it from `scp_examples` to `scp_workload`. |
-| Deploy SCPs | Initialize the directory and apply |
+### Customize to your OU structure
+1. Add or edit the variables in `config.auto.tfvars` and `variables.tf`.
+2. Add or edit the module blocks in `main.tf`.
+3. Add or edit the directories in the `policies` folder to align with your OUs.
+
+### Deploy SCPs
+1. Drag + drop your SCP `json` templates in the correct directory in `policies`. 
+2. Initialize the directory and apply. 
+
+... thats it. The module does the undifferentiated heavy lifting and applies it to the specified OUs. 
 
 ## Related Resources
 
