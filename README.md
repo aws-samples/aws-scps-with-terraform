@@ -1,6 +1,6 @@
 ## AWS SCPs with Terraform
 
-An easy way to deploy [Service Control Policies (SCPs)](https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_scps.html) with Terraform.
+An efficient way to deploy [Service Control Policies (SCPs)](https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_scps.html) with Terraform.
 
 ## Prerequisites
 
