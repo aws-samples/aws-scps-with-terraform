@@ -1,0 +1,20 @@
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+          "Sid": "DisallowCreatingSageMakerNotebooksWithDirectInternetAccess",
+          "Effect": "Deny",
+          "Action": [
+                "sagemaker:CreateNotebookInstance" 
+            ],
+          "Resource": [
+                "*" 
+            ],
+          "Condition": {
+                "StringLike": {
+                    "sagemaker:DirectInternetAccess": "Enabled"
+                }
+            }
+        }
+    ]
+  }

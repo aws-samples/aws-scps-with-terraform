@@ -38,6 +38,9 @@ There are a series of example SCPs available in the `policies` directory. Before
 - [Resource: aws_organizations_policy_attachment](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/organizations_policy_attachment)
 - [Data Source: aws_organizations_organization](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/data-sources/organizations_organization)
 
+## Contributors
+- [force_sagemaker_vpc](./policies/scp_examples/force_sagemaker_vpc.json) - Thomas van Casteren 
+
 ## Security
 
 See [CONTRIBUTING](CONTRIBUTING.md#security-issue-notifications) for more information.
