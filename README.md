@@ -1,4 +1,4 @@
-## AWS SCPs with Terraform
+## SCPs with Terraform
 
 Deploy [Service Control Policies (SCPs)](https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_scps.html) with Terraform.
 
