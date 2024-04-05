@@ -1,12 +1,10 @@
 ## AWS SCPs with Terraform
 
-An efficient way to deploy [Service Control Policies (SCPs)](https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_scps.html) with Terraform.
+Deploy [Service Control Policies (SCPs)](https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_scps.html) with Terraform.
 
 ## Prerequisites
 
 - [AWS Organizations](https://docs.aws.amazon.com/organizations/latest/userguide/orgs_introduction.html)
-- [AWS CLI](https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html)
-- [Terraform](https://learn.hashicorp.com/tutorials/terraform/install-cli)
 
 ## Limitations
 
@@ -24,8 +22,6 @@ Using the default code and policies as a guide rail:
 ### Deploy SCPs
 1. Drag + drop your SCP `json` templates in the correct directory in `policies`. 
 2. Initialize the directory and apply. 
-
-... thats it. The module does the undifferentiated heavy lifting and applies it to the specified OUs. 
 
 ## Example SCPs
 
