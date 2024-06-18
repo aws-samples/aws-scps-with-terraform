@@ -13,7 +13,7 @@ Deploy [Service Control Policies (SCPs)](https://docs.aws.amazon.com/organizatio
 ## Module Inputs
 ```hcl
 module "scps" {
-  source = "./modules/scps-new"
+  source = "https://github.com/aws-samples/aws-scps-with-terraform.git"
   ou_list = {
     "r-1xyz"           = ["root", "allow_services"] #root
     "ou-abcd-11223344" = ["sandbox"]                #sandbox ou
@@ -30,7 +30,7 @@ module "scps" {
 │   ├── root.json
 │   ├── sandbox.json
 │   └── ssm.json
-└── main.tf <-- module input here
+└── main.tf <---------- module input here
 ```
 
 Create SCP json files, add them to the policies directory, and then reference them in the `ou_list` input. 
