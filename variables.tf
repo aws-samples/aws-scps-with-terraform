@@ -2,7 +2,6 @@
 // SPDX-License-Identifier: MIT-0
 
 variable "ou_list" {
-  type = list(string)
 }
 
 variable "policies_directory_name" {

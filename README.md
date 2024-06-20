@@ -13,7 +13,7 @@ Deploy [Service Control Policies (SCPs)](https://docs.aws.amazon.com/organizatio
 ## Module Inputs
 ```hcl
 module "scps" {
-  source = "https://github.com/aws-samples/aws-scps-with-terraform.git"
+  source = "github.com/aws-samples/aws-scps-with-terraform"
   ou_list = {
     "r-1xyz"           = ["root", "allow_services"] #root
     "ou-abcd-11223344" = ["sandbox"]                #sandbox ou
