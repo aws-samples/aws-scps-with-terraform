@@ -19,15 +19,6 @@
             }
         },
         {
-            "Action": [
-              "aws-portal:ModifyAccount",
-              "aws-portal:ModifyBilling",
-              "aws-portal:ModifyPaymentMethods"
-            ],
-            "Resource": "*",
-            "Effect": "Deny"
-        },
-        {
             "Effect": "Deny",
             "Action": [
                   "*" 

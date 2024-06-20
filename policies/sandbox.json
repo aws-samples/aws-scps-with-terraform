@@ -5,12 +5,6 @@
         "Sid" : "ProtectSandbox",
         "Effect": "Deny",
         "Action": [
-            "guardduty:DeleteDetector",
-            "guardduty:DisassociateFromMasterAccount",
-            "guardduty:UpdateDetector",
-            "guardduty:CreateFilter",
-            "guardduty:CreateIPSet",
-            "access-analyzer:DeleteAnalyzer",
             "ec2:CreateClientVpnRoute",
             "ec2:AttachVpnGateway",
             "ec2:DisassociateClientVpnTargetNetwork",
