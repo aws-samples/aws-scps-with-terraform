@@ -52,7 +52,13 @@ module "scps" {
 }
 ```
 
-`policies_directory` can be used to change the name and location of the directory used to store policies. Otherwise it will default to the name of the policy type, eg `./service_control_policy/`. 
+`policies_directory` can be used to change the name and location of the directory used to store policies. Otherwise it will default to the name of the policy type, eg `./service_control_policy/`.
+
+## Troubleshooting
+
+| Issue | Fix |
+|---|---|
+| `PolicyTypeNotEnabledException` | Enable the policy type within AWS Organizations first. |
 
 ## Related Resources
 
