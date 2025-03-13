@@ -6,7 +6,7 @@ Deploy SCPs, RCPs, and other organizational policies with Terraform.
 SCP example:
 ```hcl
 module "scps" {
-  source = "github.com/jakebark/aws-organization-policies-with-terraform"
+  source = "github.com/aws-samples/terraform-aws-organization-policies"
   policy_type = "SERVICE_CONTROL_POLICY"
   ou_map = {
     "r-1xyz"           = ["root", "allow_services"] #root
@@ -18,7 +18,7 @@ module "scps" {
 RCP example:
 ```hcl
 module "rcps" {
-  source = "github.com/jakebark/aws-organization-policies-with-terraform"
+  source = "github.com/aws-samples/terraform-aws-organization-policies"
   policy_type = "RESOURCE_CONTROL_POLICY"
   ou_map = {
     "r-1xyz"           = ["root"] #root
