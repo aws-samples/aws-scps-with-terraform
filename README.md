@@ -1,14 +1,6 @@
-## SCPs with Terraform
+## terraform-aws-organization-policies
 
-Deploy [Service Control Policies (SCPs)](https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_scps.html) with Terraform.
-
-## Prerequisites
-
-- [AWS Organizations](https://docs.aws.amazon.com/organizations/latest/userguide/orgs_introduction.html)
-
-## Limitations
-
-- [SCP Service Quotas](https://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_limits.html) 
+Deploy SCPs, RCPs, and other organizational policies with Terraform.
 
 ## Module Inputs
 ```hcl
