@@ -1,6 +1,6 @@
 ## terraform-aws-organization-policies
 
-Deploy SCPs, RCPs, and other organizational policies with Terraform.
+Deploy SCPs, RCPs, and other AWS Organization policies with Terraform.
 
 ## Module Inputs
 SCP example:
