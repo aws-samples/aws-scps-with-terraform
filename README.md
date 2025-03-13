@@ -21,7 +21,7 @@ module "rcps" {
   source = "github.com/aws-samples/terraform-aws-organization-policies"
   policy_type = "RESOURCE_CONTROL_POLICY"
   ou_map = {
-    "r-1xyz"           = ["root"] #root
+    "r-1xyz" = ["root"] #root
   }
 }
 ```
