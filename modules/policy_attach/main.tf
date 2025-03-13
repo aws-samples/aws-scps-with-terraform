@@ -6,4 +6,3 @@ resource "aws_organizations_policy_attachment" "this" {
   policy_id = var.policy_id["${var.policies_directory_name}/${each.value}.json"].id
   target_id = var.ou
 }
-
