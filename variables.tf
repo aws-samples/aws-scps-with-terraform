@@ -2,7 +2,6 @@
 // SPDX-License-Identifier: MIT-0
 
 variable "ou_map" {
-  type = map(string)
 }
 
 variable "policies_directory" {
