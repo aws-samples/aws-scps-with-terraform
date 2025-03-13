@@ -52,13 +52,18 @@ module "scps" {
 }
 ```
 
-`policies_directory` can be used to change the name and location of the directory used to store policies. Otherwise it will default to the name of the policy type. 
+`policies_directory` can be used to change the name and location of the directory used to store policies. Otherwise it will default to the name of the policy type, eg `./service_control_policy/`. 
 
 ## Related Resources
 
-- [SCP examples](https://github.com/aws-samples/service-control-policy-examples)
-- [RCP examples](https://github.com/aws-samples/data-perimeter-policy-examples/tree/main/resource_control_policies)
-- [aws-samples/aws-scps-with-terraform](https://github.com/aws-samples/aws-scps-with-terraform)
+- [SCP examples](https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_scps_examples.html)
+- [RCP examples](https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_rcps_examples.html)
+- [Declarative policy syntax and examples](https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_declarative_syntax.html)
+- [Backup policy syntax and examples](https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_backup_syntax.html)
+- [Tag policy syntax and examples](https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_example-tag-policies.html)
+- [AI policy syntax and examples](https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_ai-opt-out_syntax.html)
+- [aws-samples/data-perimeter-policy-examples](https://github.com/aws-samples/data-perimeter-policy-examples/tree/main/resource_control_policies)
+- [aws-samples/service-control-policy-examples](https://github.com/aws-samples/service-control-policy-examples)
 - [Resource: aws_organizations_policy](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/organizations_policy)
 - [Resource: aws_organizations_policy_attachment](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/organizations_policy_attachment)
 
