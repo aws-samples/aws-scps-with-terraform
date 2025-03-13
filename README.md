@@ -26,9 +26,7 @@ module "rcps" {
 }
 ```
 
-`policy_type` is the type of organizational policy. Valid values are `AISERVICES_OPT_OUT_POLICY`, `BACKUP_POLICY`, `RESOURCE_CONTROL_POLICY`, `SERVICE_CONTROL_POLICY`, and `TAG_POLICY`.
-
-A new module needs to be created for each policy type. 
+`policy_type` is the type of organizational policy. Valid values are `AISERVICES_OPT_OUT_POLICY`, `BACKUP_POLICY`, `RESOURCE_CONTROL_POLICY`, `SERVICE_CONTROL_POLICY`, and `TAG_POLICY`. A new module needs to be created for each policy type. 
 
 `ou_map` is a map of OU IDs and the policies attached to them. Policies are stored as JSON files in an adjacent directory. The directory name defaults to the policy type, eg `./service_control_policy/`.
 
