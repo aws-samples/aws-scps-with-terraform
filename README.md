@@ -56,6 +56,7 @@ module "scps" {
 
 ## Related Resources
 
+- [Managing organization policies with AWS Organizations](https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies.html)
 - [Service Control Policy (SCP) examples](https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_scps_examples.html)
 - [Resource Control Policy (RCP) examples](https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_rcps_examples.html)
 - [Declarative policy syntax and examples](https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_declarative_syntax.html)
