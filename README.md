@@ -73,6 +73,7 @@ module "scps" {
 - [aws-samples/service-control-policy-examples](https://github.com/aws-samples/service-control-policy-examples)
 - [Resource: aws_organizations_policy](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/organizations_policy)
 - [Resource: aws_organizations_policy_attachment](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/organizations_policy_attachment)
+- [Terraform Registry](https://registry.terraform.io/modules/aws-samples/organization-policies/aws/latest)
 
 ## Security
 
